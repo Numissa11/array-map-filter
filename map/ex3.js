@@ -61,10 +61,48 @@ Expected OUTPUT for this sample:
 
  */
 
-function getMoviesFreshness(movies) {
+
+
+const movies = [
+  {
+    name: "Crazy Rich Asians",
+    rating: 93,
+  },
+  {
+    name: "Skyscraper",
+    rating: 46,
+  },
+  {
+    name: "Leave No Trace",
+    rating: 100,
+  },
+  {
+    name: "White Boy Rick",
+    rating: 60,
+  },
+];
+
+
+getMoviesFreshness = movies => {
+  movies.map(movie => {
+  if (movie.rating > 0 && movie.rating < 60) {
+      movie.label = "rotten"
+  }
+  else if (movie.rating >= 60 && movie.rating <= 75) {
+     movie.label = "fresh"
+  }
+  else {
+      movie.label = "certified fresh"
+  }
+})
+return movies
 }
 
 
+
+console.log(getMoviesFreshness(movies));
+
+    
 
 // DON'T TOUCH THIS!
 module.exports = getMoviesFreshness;

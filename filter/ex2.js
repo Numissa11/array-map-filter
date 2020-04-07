@@ -23,10 +23,30 @@ Sample names array, i.e. INPUT:
 Expected OUTPUT for this sample:
   ['Bran Stark', 'Arya Stark', 'Sansa Stark']
 
+
+  
 */
+const namesGOT =  [
+  'Bran Stark',
+  'Cersei Lannister',
+  'Sandor Clegane',
+  'Arya Stark',
+  'Yara Greyjoy',
+  'Sansa Stark'
+];
+
 
 function keepStarks(names) {
+const result = names.filter(function (name) {
+  const stark = name.endsWith(" Stark");
+
+  if (stark === true) {
+    return name;
+  }
+});
+return result;
 }
 
+console.log(keepStarks(namesGOT))
 // DON'T TOUCH THIS!
 module.exports = keepStarks;

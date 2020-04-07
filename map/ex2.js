@@ -42,10 +42,47 @@ Expected OUTPUT for this sample
 
 */
 
-function getFoodCategories(foods) {
+/*if (objet.isVegetarian === true) {
+  return `${objet.food} is suitable for vegetarians`;
+} else {
+  return `${objet.food} is not suitable for vegetarians`;
 }
 
+objet.isVegetarian === true
+  ? `${objet.food} is suitable for vegetarians`
+  : `${objet.food} is not suitable for vegetarians`;*/
 
+  const foodVegi = [
+    {
+      food: "Bacon",
+      isVegetarian: false
+    },
+    {
+      food: "Sausage",
+      isVegetarian: false
+    },
+    {
+      food: "Tofu",
+      isVegetarian: true
+    },
+    {
+      food: "Chick Pea",
+      isVegetarian: true
+    }
+  ];
+  
+  function getFoodCategories(foodArray) {
+    const result = foodArray.map(function (foodIngredient) {
+      if (foodIngredient.isVegetarian === true) {
+        return `${foodIngredient.food} is suitable for vegetarians`;
+      } else {
+        return `${foodIngredient.food} is not suitable for vegetarians`;
+      }
+    });
+    return result;
+  }
+  
+  console.log(getFoodCategories(foodVegi));
 
 // DON'T TOUCH THIS!
 module.exports = getFoodCategories;
